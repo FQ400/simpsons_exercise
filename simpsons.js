@@ -43,7 +43,7 @@ var laugh = function(group) {
 };
 
 var joke = function(person) {
-	talk(person, "What is Bruce Lee's favorite drink? Wataaaaah!")
+  talk(person, "What is Bruce Lee's favorite drink? Wataaaaah!")
 };
 
 greet(people);
