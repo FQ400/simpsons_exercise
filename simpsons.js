@@ -1,3 +1,5 @@
+'use strict';
+
 // ----- use this only in browsers
 // check if console.log available and prevent
 // errors if not
@@ -9,41 +11,43 @@
 
 var people = ['Bart', 'Homer', 'Lisa', 'Maggie', 'Marge'];
 
-var talk = function(person, sentence) {
+var talk = function (person, sentence) {
 
   var result = '';
 
-  if (person == 'Maggie') {
+  if (person === 'Maggie') {
     result = person + " can't talk.";
   }
 
-  if (person == 'Bart') {
+  if (person === 'Bart') {
     result = person + ' eat my shorts.';
   }
 
-  if (sentence == 'lol') {
+  if (sentence === 'lol') {
     result = person + ' laughs.';
   } else {
     result = person + ' says: ' + sentence;
   }
   // console.log(result);
-  return result
+  return result;
 };
 
-var greet = function(group) {
-  for (person_idx in group) {
-    talk(group[person_idx], 'hi.')
+var greet = function (group) {
+  var idx;
+  for (idx = 0; idx < people.length; idx += 1) {
+    talk(group[idx], 'hi.');
   }
 };
 
-var laugh = function(group) {
-  for (person_idx in group) {
-    talk(group[person_idx], 'lol')
+var laugh = function (group) {
+  var idx;
+  for (idx = 0; idx < people.length; idx += 1) {
+    talk(group[idx], 'lol');
   }
 };
 
-var joke = function(person) {
-  talk(person, "What is Bruce Lee's favorite drink? Wataaaaah!")
+var joke = function (person) {
+  talk(person, "What is Bruce Lee's favorite drink? Wataaaaah!");
 };
 
 greet(people);
