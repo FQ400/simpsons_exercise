@@ -1,14 +1,14 @@
-function Talk(person, sentence) {
+var talk = function(person, sentence) {
 
-  if (person = Maggie) {
+  if (person == 'Maggie') {
     return person + ' can\'t talk.';
   }
 
-  if (person = Bart) {
+  if (person == 'Bart') {
     return person +  " eat my shorts.";
   }
 
-  if (sentence = 'lol') {
+  if (sentence == 'lol') {
     return person+' laughs.';
   } else {
     return person + ' says: ' + sentence;
@@ -25,14 +25,14 @@ function greet(group) {
 
 var laugh = function(group) {
   for (person in group) {
-    Talk(person, "lol")
+    talk(person, "lol")
   }
 };
 
 var joke = function(person) {
-	Talk(person, 'What is Bruce Lee\'s favorite drink? Wataaaaah!')
+	talk(person, 'What is Bruce Lee\'s favorite drink? Wataaaaah!')
 };
 
 greet(people);
 joke(people[1]);
-laugh(people));
+laugh(people);
