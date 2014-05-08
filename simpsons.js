@@ -2,27 +2,23 @@
 // errors if not
 if (!window.console) {
   window.console = {};
-  window.console.log = function(){};
+  window.console.log = function() {};
 }
 
 var people = ['Bart', 'Homer', 'Lisa', 'Maggie', 'Marge'];
 
 var talk = function(person, sentence) {
   if (person == 'Maggie') {
-    // console.log(person + " can't talk.");
     return person + " can't talk.";
   }
 
   if (person == 'Bart') {
-    // console.log(person + " eat my shorts.")
     return person + " eat my shorts.";
   }
 
   if (sentence == 'lol') {
-    // console.log(person + ' laughs.');
     return person + ' laughs.';
   } else {
-    // console.log(person + ' says: ' + sentence);
     return person + ' says: ' + sentence;
   }
 };
