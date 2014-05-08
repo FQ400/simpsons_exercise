@@ -3,10 +3,10 @@
 // ----- use this only in browsers
 // check if console.log available and prevent
 // errors if not
-// if (!window.console) {
-//   window.console = {};
-//   window.console.log = function() {};
-// }
+if (!window.console) {
+  window.console = {};
+  window.console.log = function() {};
+}
 // -----
 
 var people = ['Bart', 'Homer', 'Lisa', 'Maggie', 'Marge'];
@@ -28,7 +28,7 @@ var talk = function (person, sentence) {
   } else {
     result = person + ' says: ' + sentence;
   }
-  // console.log(result);
+  console.log(result);
   return result;
 };
 
