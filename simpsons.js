@@ -1,36 +1,46 @@
-var talk = function(person, sentence) {
+// check if console.log available and prevent
+// errors if not
+if (!window.console) {
+  window.console = {};
+  window.console.log = function(){};
+}
 
+var people = ['Bart', 'Homer', 'Lisa', 'Maggie', 'Marge'];
+
+var talk = function(person, sentence) {
   if (person == 'Maggie') {
-    return person + ' can\'t talk.';
+    // console.log(person + " can't talk.");
+    return person + " can't talk.";
   }
 
   if (person == 'Bart') {
-    return person +  " eat my shorts.";
+    // console.log(person + " eat my shorts.")
+    return person + " eat my shorts.";
   }
 
   if (sentence == 'lol') {
-    return person+' laughs.';
+    // console.log(person + ' laughs.');
+    return person + ' laughs.';
   } else {
+    // console.log(person + ' says: ' + sentence);
     return person + ' says: ' + sentence;
   }
 };
 
-var people = ['Bart', "Homer", 'Lisa', 'Maggie', 'Marge'];
-
-function greet(group) {
-  for (person in group) {
-    talk(person, 'hi.')
+var greet = function(group) {
+  for (person_idx in group) {
+    talk(group[person_idx], 'hi.')
   }
 };
 
 var laugh = function(group) {
-  for (person in group) {
-    talk(person, "lol")
+  for (person_idx in group) {
+    talk(group[person_idx], 'lol')
   }
 };
 
 var joke = function(person) {
-	talk(person, 'What is Bruce Lee\'s favorite drink? Wataaaaah!')
+	talk(person, "What is Bruce Lee's favorite drink? Wataaaaah!")
 };
 
 greet(people);
