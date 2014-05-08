@@ -1,26 +1,33 @@
+// ----- use this only in browsers
 // check if console.log available and prevent
 // errors if not
-if (!window.console) {
-  window.console = {};
-  window.console.log = function() {};
-}
+// if (!window.console) {
+//   window.console = {};
+//   window.console.log = function() {};
+// }
+// -----
 
 var people = ['Bart', 'Homer', 'Lisa', 'Maggie', 'Marge'];
 
 var talk = function(person, sentence) {
+
+  var result = '';
+
   if (person == 'Maggie') {
-    return person + " can't talk.";
+    result = person + " can't talk.";
   }
 
   if (person == 'Bart') {
-    return person + " eat my shorts.";
+    result = person + ' eat my shorts.';
   }
 
   if (sentence == 'lol') {
-    return person + ' laughs.';
+    result = person + ' laughs.';
   } else {
-    return person + ' says: ' + sentence;
+    result = person + ' says: ' + sentence;
   }
+  // console.log(result);
+  return result
 };
 
 var greet = function(group) {
