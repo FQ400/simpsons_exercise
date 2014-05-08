@@ -5,31 +5,32 @@
 // errors if not
 if (!window.console) {
   window.console = {};
-  window.console.log = function() {};
+  window.console.log = function () {};
 }
 // -----
+
+var print_result = function (arg) {
+  console.log(arg);
+  return arg;
+};
 
 var people = ['Bart', 'Homer', 'Lisa', 'Maggie', 'Marge'];
 
 var talk = function (person, sentence) {
 
-  var result = '';
-
-  if (person === 'Maggie') {
-    result = person + " can't talk.";
+  if (person === 'Maggie' && sentence !== 'lol') {
+    return print_result(person + " can't talk.");
   }
 
   if (person === 'Bart') {
-    result = person + ' eat my shorts.';
+    return print_result(person + ' says: eat my shorts.');
   }
 
   if (sentence === 'lol') {
-    result = person + ' laughs.';
-  } else {
-    result = person + ' says: ' + sentence;
+    return print_result(person + ' laughs.');
   }
-  console.log(result);
-  return result;
+
+  return print_result(person + ' says: ' + sentence);
 };
 
 var greet = function (group) {
